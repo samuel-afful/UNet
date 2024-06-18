@@ -25,12 +25,28 @@ def single_inference(model_path,image_path):
     img = img.permute(1,2,0)
     plt.imshow(img)
     
+    
+    #preprocessing the predicted output
     pred_mask = pred_mask.squeeze(0)
     pred_mask = pred_mask.permute(1,2,0)
     
     pred_mask[pred_mask>0] = 1
     pred_mask[pred_mask<0] = 0
     
+    for i in range(1,3):
+        if i == 1:
+            plt.subplot(1, 2, i)
+            plt.imshow(img)
+        else:
+            plt.imshow(img)
+    
+    
+
+
+if __name__ == '__main__':
+    MODEL_PATH=""
+    IMAGE_PATH = ""
+    #single_inference(model_path, image_path)
     
     
     
